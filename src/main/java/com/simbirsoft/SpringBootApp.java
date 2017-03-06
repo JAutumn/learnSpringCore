@@ -1,15 +1,15 @@
 package com.simbirsoft;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 import com.simbirsoft.api.Terminator;
-import com.simbirsoft.config.Config;
 
-public class JavaConfigApp {
+@SpringBootApplication
+public class SpringBootApp {
     public static void main(String[] args) {
-        ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
+        ConfigurableApplicationContext context = SpringApplication.run(SpringBootApp.class, args);
 
         Terminator t1000first = context.getBean("t1000", Terminator.class);
         Terminator t1000second = context.getBean("t1000", Terminator.class);

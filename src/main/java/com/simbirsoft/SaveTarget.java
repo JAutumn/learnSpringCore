@@ -1,7 +1,10 @@
 package com.simbirsoft;
 
+import org.springframework.stereotype.Component;
+
 import com.simbirsoft.api.Target;
 
+@Component
 public class SaveTarget implements Target {
     private String value;
 

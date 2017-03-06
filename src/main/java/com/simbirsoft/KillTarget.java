@@ -6,7 +6,7 @@ public class KillTarget implements Target {
     private String value;
 
     public KillTarget() {
-        this.value = "Kill Sarah Connor";
+        this.value = "Kill John Connor";
     }
 
     @Override

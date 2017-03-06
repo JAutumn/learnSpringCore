@@ -1,5 +1,8 @@
 package com.simbirsoft;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -13,7 +16,18 @@ public class T800 implements Terminator {
 
     @Autowired
     public T800(@Qualifier("saveTarget") Target target) {
+        System.out.println("T800 constructor call");
         this.target = target;
+    }
+
+    @PostConstruct
+    public void init() {
+        System.out.println("T800 postconstruct call");
+    }
+
+    @PreDestroy
+    public void cleanUp() {
+        System.out.println("T800 predestroy call");
     }
 
     public void showTarget() {

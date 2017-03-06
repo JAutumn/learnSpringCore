@@ -11,7 +11,7 @@ import com.simbirsoft.api.Terminator;
 public class T1000 implements Terminator {
 
     @Autowired
-    @Qualifier("killTarget")
+    @Qualifier("randomTarget")
     private Target target;
 
     @Override

@@ -10,10 +10,16 @@ import com.simbirsoft.config.Config;
 public class JavaConfigApp {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
-        Terminator t800 = context.getBean("t800", Terminator.class);
-        t800.showTarget();
 
-        Terminator t1000 = context.getBean("t1000", Terminator.class);
-        t1000.showTarget();
+        Terminator t1000first = context.getBean("t1000", Terminator.class);
+        Terminator t1000second = context.getBean("t1000", Terminator.class);
+
+        //T1000 - Singleton
+        System.out.println(t1000first == t1000second);
+
+        for (int i = 0; i < 10; i++) {
+            //Random Target prototype
+            t1000first.showTarget();
+        }
     }
 }

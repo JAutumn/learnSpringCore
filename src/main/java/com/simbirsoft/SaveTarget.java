@@ -1,12 +1,15 @@
 package com.simbirsoft;
 
-public class Target {
+import com.simbirsoft.api.Target;
+
+public class SaveTarget implements Target {
     private String value;
 
-    public Target() {
+    public SaveTarget() {
         this.value = "Save John Connor";
     }
 
+    @Override
     public void show() {
         System.out.println(value);
     }
